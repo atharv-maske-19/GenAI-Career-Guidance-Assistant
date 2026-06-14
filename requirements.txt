@@ -3,3 +3,7 @@ pdfplumber
 pandas
 numpy
 spacy
+plotly
+python-dotenv
+google-genai
+PyPDF2
