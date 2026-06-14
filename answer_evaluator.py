@@ -2,11 +2,14 @@ from google import genai
 from dotenv import load_dotenv
 import os
 
-load_dotenv()
+load_dotenv()  # still keep it
 
-client = genai.Client(
-    api_key=os.getenv("GEMINI_API_KEY")
-)
+api_key = os.getenv("GEMINI_API_KEY")
+
+if not api_key:
+    raise ValueError("GEMINI_API_KEY not found. Check .env file")
+
+client = genai.Client(api_key=api_key)
 def evaluate_answer(question, answer):
 
     prompt = f"""
